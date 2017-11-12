@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     tools:text="1526"
+    android:id="@+id/adapter_item_text_view"
     android:textAppearance="@android:style/TextAppearance.Medium"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
