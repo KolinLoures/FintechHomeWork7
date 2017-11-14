@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
 
+import com.example.kolin.fintechhomework7.db.tables.MainNodeTable;
+import com.example.kolin.fintechhomework7.db.tables.ParentNodeTable;
+
 /**
  * Created by kolin on 12.11.2017.
  */
@@ -23,9 +26,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.setForeignKeyConstraintsEnabled(true);
         sqLiteDatabase.execSQL(MainNodeTable.createTable());
         sqLiteDatabase.execSQL(ParentNodeTable.createTable());
+    }
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        if (!db.isReadOnly())
+            db.setForeignKeyConstraintsEnabled(true);
+        super.onOpen(db);
     }
 
     @Override

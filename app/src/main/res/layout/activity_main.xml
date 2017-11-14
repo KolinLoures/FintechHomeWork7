@@ -6,10 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.kolin.fintechhomework7.ui.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_activity_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <include layout="@layout/rec_view" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/main_activity_floating_button_add"
